@@ -18,6 +18,10 @@ h3 {
   margin: 0;
 }
 
+h2 {
+  font-size: 20px;
+}
+
 input,
 button {
   font-size: 1em;
