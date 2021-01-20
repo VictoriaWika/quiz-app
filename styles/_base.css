@@ -23,6 +23,10 @@ h2 {
   font-size: 20px;
 }
 
+main {
+  overflow: scroll;
+}
+
 input,
 button {
   font-size: 1em;
@@ -32,6 +36,7 @@ button {
   border: none;
   color: white;
   font-weight: 200;
+  margin-top: 10px;
 }
 
 header {
