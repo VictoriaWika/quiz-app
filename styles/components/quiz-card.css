@@ -15,3 +15,20 @@
     brightness(103%) contrast(105%);
   fill: black;
 }
+
+.quiz-card__list {
+  padding-left: 0;
+}
+
+.quiz-card__tag {
+  font-size: 1em;
+  background: linear-gradient(to bottom right, #7027f4, #006af5);
+  padding: 5px 10px;
+  border-radius: 30px;
+  border: none;
+  color: white;
+  font-weight: 200;
+  margin-top: 10px;
+  list-style: none;
+  display: inline-block;
+}
