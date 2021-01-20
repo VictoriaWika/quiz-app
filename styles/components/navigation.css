@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: linear-gradient(to bottom right, #7027f4, #006af5);
 }
 
 .navigation a {

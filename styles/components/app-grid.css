@@ -3,7 +3,3 @@
   grid-template-rows: 48px auto 48px;
   height: 100vh;
 }
-
-.app-grid__footer {
-  background-color: linear-gradient(to bottom right, #7027f4, #006af5);
-}
