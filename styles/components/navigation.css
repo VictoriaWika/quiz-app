@@ -9,22 +9,7 @@
   padding: 9px;
 }
 
-.navigation__icon1 {
-  filter: invert(20%) sepia(79%) saturate(5192%) hue-rotate(259deg)
-    brightness(94%) contrast(104%);
-}
-
-.navigation__icon2 {
-  filter: invert(15%) sepia(100%) saturate(3582%) hue-rotate(245deg)
-    brightness(106%) contrast(91%);
-}
-
-.navigation__icon3 {
+.navigation__icon {
   filter: invert(22%) sepia(71%) saturate(2901%) hue-rotate(219deg)
     brightness(103%) contrast(105%);
-}
-
-.navigation__icon4 {
-  filter: invert(40%) sepia(89%) saturate(7275%) hue-rotate(207deg)
-    brightness(103%) contrast(102%);
 }
