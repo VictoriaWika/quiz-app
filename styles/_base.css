@@ -19,6 +19,12 @@ h3 {
   margin: 0;
 }
 
+h1 {
+  background: linear-gradient(to bottom right, #7939f0 0%, #2f83f2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 h2 {
   font-size: 20px;
 }
@@ -26,7 +32,7 @@ h2 {
 input,
 button {
   font-size: 1em;
-  background: linear-gradient(to bottom right, #7027f4, #006af5);
+  background: linear-gradient(to bottom right, #7939f0, #2f83f2);
   padding: 5px 10px;
   border-radius: 30px;
   border: none;
