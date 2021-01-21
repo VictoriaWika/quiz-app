@@ -29,15 +29,8 @@ h2 {
   font-size: 20px;
 }
 
-input,
-button {
-  font-size: 1em;
-  background: linear-gradient(to bottom right, #7939f0, #2f83f2);
-  padding: 5px 10px;
-  border-radius: 30px;
-  border: none;
-  color: white;
-  font-weight: 200;
+main {
+  overflow: scroll;
 }
 
 header {
