@@ -15,6 +15,14 @@
     brightness(103%) contrast(105%);
 }
 
+.quiz-card__bookmarked {
+  position: absolute;
+  top: -16px;
+  right: 30px;
+  filter: invert(22%) sepia(71%) saturate(2901%) hue-rotate(219deg)
+    brightness(103%) contrast(105%);
+}
+
 .quiz-card__list {
   padding-left: 0;
 }
