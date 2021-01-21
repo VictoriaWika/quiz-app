@@ -50,6 +50,7 @@
     /* Safari, Android, iOS */ url('../fonts/nunito-v16-latin-300.svg')
       format('svg'); /* Legacy iOS */
 }
+
 /* nunito-regular - latin */
 @font-face {
   font-family: 'Nunito';
@@ -66,6 +67,7 @@
     /* Safari, Android, iOS */ url('../fonts/nunito-v16-latin-regular.svg')
       format('svg'); /* Legacy iOS */
 }
+
 /* nunito-600 - latin */
 @font-face {
   font-family: 'Nunito';
