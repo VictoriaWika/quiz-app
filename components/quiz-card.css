@@ -1,21 +1,13 @@
 .quiz-card {
   background-color: rgb(241, 241, 241);
   margin: 30px 10px;
-  padding: 30px;
+  padding: 25px;
   text-align: center;
   border-radius: 30px;
   position: relative;
 }
 
 .quiz-card__bookmark {
-  position: absolute;
-  top: -16px;
-  right: 30px;
-  filter: invert(22%) sepia(71%) saturate(2901%) hue-rotate(219deg)
-    brightness(103%) contrast(105%);
-}
-
-.quiz-card__bookmarked {
   position: absolute;
   top: -16px;
   right: 30px;

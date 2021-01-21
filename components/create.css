@@ -1,0 +1,38 @@
+.create {
+  margin: 30px;
+  text-align: center;
+}
+
+.create__form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.create__form-input {
+  font-family: 'Nunito', sans-serif;
+  font-size: 112.5%;
+  line-height: 1.5;
+  color: #030c13;
+}
+
+.create__form-text {
+  margin-bottom: 15px;
+  border: 2px solid #006af5;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  color: #030c13;
+}
+
+.create__form-button {
+  font-size: 1em;
+  background: linear-gradient(to bottom right, #7027f4, #006af5);
+  padding: 8px 15px;
+  border-radius: 30px;
+  border: none;
+  color: white;
+  font-weight: 200;
+  margin-top: 20px;
+  list-style: none;
+  display: inline-block;
+}

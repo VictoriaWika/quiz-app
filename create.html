@@ -8,96 +8,58 @@
   </head>
   <body class="app-grid">
     <header class="app-grid__header">
-      <h1>Bookmarks</h1>
+      <h1>Create</h1>
     </header>
 
     <main class="app-grid__main">
-      <section class="quiz-card">
-        <img
-          role="button"
-          class="quiz-card__bookmark"
-          src="/icons/marked.svg"
-          alt="Bookmark"
-          width="30"
-          height="30"
-        />
-        <h2>What is always coming but never arrives?</h2>
-        <details>
-          <summary>Show Answer</summary>
-          Tomorrow
-        </details>
-        <ul class="quiz-card__list">
-          <li class="quiz-card__tag">Tag 1</li>
-          <li class="quiz-card__tag">Tag 2</li>
-          <li class="quiz-card__tag">Tag 3</li>
-          <li class="quiz-card__tag">Tag 4</li>
-        </ul>
-      </section>
-      <section class="quiz-card">
-        <img
-          role="button"
-          class="quiz-card__bookmark"
-          src="/icons/marked.svg"
-          alt="Bookmark"
-          width="30"
-          height="30"
-        />
+      <form class="create">
+        <section class="create__form">
+          <label class="create__form-input" for="question"
+            >Add a new question:
+          </label>
 
-        <h2>Question</h2>
-        <details>
-          <summary>Show Answer</summary>
-          Answer
-        </details>
-        <ul class="quiz-card__list">
-          <li class="quiz-card__tag">Tag 1</li>
-          <li class="quiz-card__tag">Tag 2</li>
-          <li class="quiz-card__tag">Tag 3</li>
-          <li class="quiz-card__tag">Tag 4</li>
-        </ul>
-      </section>
-      <section class="quiz-card">
-        <img
-          role="button"
-          class="quiz-card__bookmark"
-          src="/icons/marked.svg"
-          alt="Bookmark"
-          width="30"
-          height="30"
-        />
+          <textarea
+            class="create__form-text"
+            rows="3"
+            cols="33"
+            name="question"
+            id="question"
+            required
+          ></textarea>
+        </section>
+        <section class="create__form">
+          <label class="create__form-input" for="answer"
+            >Tell us the right answer:
+          </label>
 
-        <h2>Question</h2>
-        <details>
-          <summary>Show Answer</summary>
-          Answer
-        </details>
-        <ul class="quiz-card__list">
-          <li class="quiz-card__tag">Tag 1</li>
-          <li class="quiz-card__tag">Tag 2</li>
-          <li class="quiz-card__tag">Tag 3</li>
-          <li class="quiz-card__tag">Tag 4</li>
-        </ul>
-      </section>
-      <section class="quiz-card">
-        <img
-          role="button"
-          class="quiz-card__bookmark"
-          src="/icons/marked.svg"
-          alt="Bookmark"
-          width="30"
-          height="30"
-        />
-        <h2>Question</h2>
-        <details>
-          <summary>Show Answer</summary>
-          Answer
-        </details>
-        <ul class="quiz-card__list">
-          <li class="quiz-card__tag">Tag 1</li>
-          <li class="quiz-card__tag">Tag 2</li>
-          <li class="quiz-card__tag">Tag 3</li>
-          <li class="quiz-card__tag">Tag 4</li>
-        </ul>
-      </section>
+          <textarea
+            class="create__form-text"
+            rows="3"
+            cols="33"
+            name="answer"
+            id="answer"
+            required
+          ></textarea>
+        </section>
+        <section class="create__form">
+          <label class="create__form-input" for="tags">Add some tags: </label
+          ><br />
+          <input
+            class="create__form-text"
+            type="text"
+            name="tags"
+            id="tags"
+            required
+          />
+        </section>
+        <section class="create__form">
+          <input
+            class="create__form-button"
+            type="submit"
+            value="Submit your Question!"
+          />
+        </section>
+      </form>
     </main>
 
     <footer class="app-grid__footer">
@@ -113,7 +75,7 @@
         <a href="/bookmarks.html"
           ><img
             class="navigation__icon"
-            src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PHBhdGggZD0ibTQyOS41IDMwLjUzNmMtMjguOTk1IDAtNTIuNSAyMy41MDUtNTIuNSA1Mi41djE4OC41aDEwNXYtMTg4LjVjMC0yOC45OTUtMjMuNTA1LTUyLjUtNTIuNS01Mi41eiIvPjxwYXRoIGQ9Im04Mi41IDBjLTI4Ljk5NSAwLTUyLjUgMjMuNTA1LTUyLjUgNTIuNXY0NTkuNWwxNTguNS03OS4yNSAxNTguNSA3OS4yNXYtNDU5LjVjMC0yOC45OTUgMjMuNTA1LTUyLjUgNTIuNS01Mi41eiIvPjwvZz48L3N2Zz4="
+            src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PHBhdGggZD0ibTQxNC41IDBoLTMxN2MtMzcuMjIgMC02Ny41IDMwLjI4LTY3LjUgNjcuNXY0NDQuNWwxNzMuNS04Ni43NSAxNzMuNSA4Ni43NXYtMjQxaDEwNXYtMjAzLjVjMC0zNy4yMi0zMC4yOC02Ny41LTY3LjUtNjcuNXptLTY3LjUgNjcuNXYzOTUuOTU5bC0xNDMuNS03MS43NS0xNDMuNSA3MS43NXYtMzk1Ljk1OWMwLTIwLjY3OCAxNi44MjItMzcuNSAzNy41LTM3LjVoMjYwLjljLTcuMTk3IDEwLjczMi0xMS40IDIzLjYzNi0xMS40IDM3LjV6bTEwNSAxNzMuNWgtNzV2LTE3My41YzAtMjAuNjc4IDE2LjgyMi0zNy41IDM3LjUtMzcuNXMzNy41IDE2LjgyMiAzNy41IDM3LjV6Ii8+PC9nPjwvc3ZnPg=="
             alt="Bookmark"
             width="30"
             height="30"
@@ -121,11 +83,12 @@
         <a href="/create.html"
           ><img
             class="navigation__icon"
-            src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEyLjAwMSA1MTIuMDAxIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIuMDAxIDUxMi4wMDE7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxnPg0KCQk8cGF0aCBkPSJNNDk2LjA2Myw2Mi4yOTlsLTQ2LjM5Ni00Ni40Yy0yMS4xOTktMjEuMTk5LTU1LjY4OS0yMS4xOTgtNzYuODg4LDBDMzUyLjgyLDM1Ljg2LDQ3Ljk2NCwzNDAuNzM5LDI3LjU5MSwzNjEuMTEzDQoJCQljLTIuMTcsMi4xNy0zLjYyNCw1LjA1NC00LjE0Miw3Ljg3NUwwLjI1MSw0OTQuMjY4Yy0wLjg5OSw0Ljg1NywwLjY0OSw5Ljg0Niw0LjE0MiwxMy4zMzljMy40OTcsMy40OTcsOC40ODcsNS4wNDIsMTMuMzM4LDQuMTQzDQoJCQlMMTQzLDQ4OC41NDljMi44OTUtMC41NCw1Ljc0MS0yLjAwOCw3Ljg3NS00LjE0M2wzNDUuMTg4LTM0NS4yMTRDNTE3LjMxMSwxMTcuOTQ0LDUxNy4zMTQsODMuNTUsNDk2LjA2Myw2Mi4yOTl6IE0zMy43MjEsNDc4LjI3Ng0KCQkJbDE0LjAzMy03NS43ODRsNjEuNzQ2LDYxLjc1TDMzLjcyMSw0NzguMjc2eiBNMTQwLjI2OSw0NTIuNTg1TDU5LjQxLDM3MS43MjFMMzU0LjYyLDc2LjQ4OGw4MC44NTksODAuODY1TDE0MC4yNjksNDUyLjU4NXoNCgkJCSBNNDc0Ljg1LDExNy45NzlsLTE4LjE1OSwxOC4xNjFsLTgwLjg1OS04MC44NjVsMTguMTU5LTE4LjE2MWM5LjUwMS05LjUwMiwyNC45Ni05LjUwMywzNC40NjMsMGw0Ni4zOTYsNDYuNA0KCQkJQzQ4NC4zNzUsOTMuMDM5LDQ4NC4zNzUsMTA4LjQ1Myw0NzQuODUsMTE3Ljk3OXoiLz4NCgk8L2c+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg=="
-            alt="Create"
+            src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEyLjAwMSA1MTIuMDAxIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIuMDAxIDUxMi4wMDE7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxnPg0KCQk8cGF0aCBkPSJNNDk2LjA2Myw2Mi4yOTlsLTQ2LjM5Ni00Ni40Yy0yMS4yLTIxLjE5OS01NS42OS0yMS4xOTgtNzYuODg4LDBsLTE4LjE2LDE4LjE2MWwxMjMuMjg0LDEyMy4yOTRsMTguMTYtMTguMTYxDQoJCQlDNTE3LjMxMSwxMTcuOTQ0LDUxNy4zMTQsODMuNTUsNDk2LjA2Myw2Mi4yOTl6Ii8+DQoJPC9nPg0KPC9nPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGQ9Ik0yMi4wMTIsMzc2Ljc0N0wwLjI1MSw0OTQuMjY4Yy0wLjg5OSw0Ljg1NywwLjY0OSw5Ljg0Niw0LjE0MiwxMy4zMzljMy40OTcsMy40OTcsOC40ODcsNS4wNDIsMTMuMzM4LDQuMTQzDQoJCQlsMTE3LjUxMi0yMS43NjNMMjIuMDEyLDM3Ni43NDd6Ii8+DQoJPC9nPg0KPC9nPg0KPGc+DQoJPGc+DQoJCTxwb2x5Z29uIHBvaW50cz0iMzMzLjQwNyw1NS4yNzQgMzguMTk4LDM1MC41MDYgMTYxLjQ4Miw0NzMuNzk5IDQ1Ni42OTEsMTc4LjU2OCAJCSIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K"
+            alt="pencil"
             width="30"
             height="30"
-        /></a>
+          />
+        </a>
         <a href=""
           ><img
             class="navigation__icon"
