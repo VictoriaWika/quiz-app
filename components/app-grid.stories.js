@@ -1,5 +1,3 @@
-import '../styles/index.css'
-
 import './app-grid.css'
 import appgrid from './app-grid.html'
 
