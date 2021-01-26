@@ -1,5 +1,5 @@
 .quiz-card {
-  background-color: rgb(241, 241, 241);
+  background-color: var(--color-lightgrey);
   margin: 30px 10px;
   padding: 25px;
   text-align: center;
@@ -11,23 +11,37 @@
   position: absolute;
   top: -16px;
   right: 30px;
-  filter: invert(22%) sepia(71%) saturate(2901%) hue-rotate(219deg)
-    brightness(103%) contrast(105%);
+  filter: invert(35%) sepia(62%) saturate(1695%) hue-rotate(212deg)
+    brightness(95%) contrast(98%);
+
+  /* var(--color-blue) */
 }
 
 .quiz-card__list {
-  padding-left: 0;
+  padding: 0;
+  margin-bottom: 0;
 }
 
 .quiz-card__tag {
   font-size: 1em;
-  background: linear-gradient(to bottom right, #7027f4, #006af5);
+  background: linear-gradient(
+    225deg,
+    var(--color-lightblue),
+    var(--color-lightpurple)
+  );
   padding: 5px 10px;
   border-radius: 30px;
   border: none;
-  color: white;
+  color: var(--color-white);
   font-weight: 200;
-  margin-top: 10px;
   list-style: none;
   display: inline-block;
+}
+
+details > summary {
+  list-style: none;
+}
+
+.quiz-card__summary::-webkit-details-marker {
+  display: none;
 }

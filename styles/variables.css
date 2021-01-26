@@ -1,5 +1,9 @@
 :root {
-  --color-blue: #449dd1;
-  --color-salmon: #f7a399;
-  --color-purple: #aa7bc3;
+  --color-lightblue: #2f83f2;
+  --color-blue: #4969f1;
+  --color-purple: #664cf1;
+  --color-lightpurple: #7939f0;
+  --color-white: #fff;
+  --color-lightgrey: #f1f1f1;
+  --text-color: #4d4d4d;
 }

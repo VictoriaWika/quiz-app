@@ -2,7 +2,7 @@ import './quiz-card.css'
 import quizcard from './quiz-card.html'
 
 export default {
-  title: 'Quiz-Card',
+  title: 'Components',
 }
 
-export const base = () => quizcard
+export const Quizcard = () => quizcard

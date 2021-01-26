@@ -1,7 +1,6 @@
 @import '_base.css';
-@import '../components/app-grid.css';
+@import 'fonts.css';
+@import 'variables.css';
 @import '../components/create.css';
 @import '../components/navigation.css';
 @import '../components/quiz-card.css';
-@import 'fonts.css';
-@import 'variables.css';
