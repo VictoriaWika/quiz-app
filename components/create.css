@@ -13,24 +13,28 @@
   font-family: 'Nunito', sans-serif;
   font-size: 112.5%;
   line-height: 1.5;
-  color: #030c13;
+  color: var(--text-color);
 }
 
 .create__form-text {
   margin-bottom: 15px;
-  border: 2px solid #006af5;
+  border: 2px solid var(--color-lightblue);
   font-family: 'Nunito', sans-serif;
   font-size: 16px;
-  color: #030c13;
+  color: var(--text-color);
 }
 
 .create__form-button {
   font-size: 1em;
-  background: linear-gradient(to bottom right, #7027f4, #006af5);
+  background: linear-gradient(
+    225deg,
+    var(--color-lightblue),
+    var(--color-lightpurple)
+  );
   padding: 8px 15px;
   border-radius: 30px;
   border: none;
-  color: white;
+  color: var(--color-white);
   font-weight: 200;
   margin-top: 20px;
   list-style: none;

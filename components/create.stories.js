@@ -2,7 +2,7 @@ import './create.css'
 import create from './create.html'
 
 export default {
-  title: 'Create',
+  title: 'Components',
 }
 
-export const base = () => create
+export const Create = () => create
