@@ -10,6 +10,18 @@ const navBookmark = document.querySelector('[data-js=iconBookmark]')
 const navCreate = document.querySelector('[data-js=iconCreate]')
 const navSettings = document.querySelector('[data-js=iconSettings]')
 
+const bm1 = document.querySelector('[data-js=bm1]')
+const bm2 = document.querySelector('[data-js=bm2]')
+const bm3 = document.querySelector('[data-js=bm3]')
+const bm4 = document.querySelector('[data-js=bm4]')
+
+const img1 = 'http://localhost:8080/icons/bookmark.svg'
+const img2 = 'http://localhost:8080/icons/marked.svg'
+
+function change() {
+  bm1.src == img1 ? (bm1.src = img2) : (bm1.src = img1)
+}
+
 /* function change() {
   var img1 = './icons/bookmark.svg',
     img2 = './icons/marked.svg'
@@ -20,6 +32,11 @@ const navSettings = document.querySelector('[data-js=iconSettings]')
 https://jsfiddle.net/guspersson/s8qLg7ur/
 
 } */
+
+bm1.addEventListener('click', () => {
+  change()
+  console.log(bm1.src == img1)
+})
 
 navHome.addEventListener('click', () => {
   header.textContent = 'Quiz App'
