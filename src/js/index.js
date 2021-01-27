@@ -22,20 +22,36 @@ function change() {
   bm1.src == img1 ? (bm1.src = img2) : (bm1.src = img1)
 }
 
-/* function change() {
-  var img1 = './icons/bookmark.svg',
-    img2 = './icons/marked.svg'
-  var imgElement = document.getElementById('test')
+function change2() {
+  bm2.src == img1 ? (bm2.src = img2) : (bm2.src = img1)
+}
 
-  imgElement.src = imgElement.src === img1 ? img2 : img1
+function change3() {
+  bm3.src == img1 ? (bm3.src = img2) : (bm3.src = img1)
+}
 
-https://jsfiddle.net/guspersson/s8qLg7ur/
-
-} */
+function change4() {
+  bm4.src == img1 ? (bm4.src = img2) : (bm4.src = img1)
+}
 
 bm1.addEventListener('click', () => {
   change()
   console.log(bm1.src == img1)
+})
+
+bm2.addEventListener('click', () => {
+  change2()
+  console.log(bm2.src == img1)
+})
+
+bm3.addEventListener('click', () => {
+  change3()
+  console.log(bm3.src == img1)
+})
+
+bm4.addEventListener('click', () => {
+  change4()
+  console.log(bm4.src == img1)
 })
 
 navHome.addEventListener('click', () => {
@@ -56,11 +72,6 @@ navHome.addEventListener('click', () => {
   bookmark.hidden = true
   create.hidden = true
   settings.hidden = true
-
-  /* navHome.classList.add('active')
-  navBookmark.classList.remove('active')
-  navCreate.classList.remove('active')
-  navSettings.classList.remove('active') */
 })
 
 navBookmark.addEventListener('click', () => {
@@ -81,11 +92,6 @@ navBookmark.addEventListener('click', () => {
   bookmark.hidden = false
   create.hidden = true
   settings.hidden = true
-
-  /* navHome.classList.remove('active')
-  navBookmark.classList.add('active')
-  navCreate.classList.remove('active')
-  navSettings.classList.remove('active') */
 })
 
 navCreate.addEventListener('click', () => {
@@ -107,11 +113,6 @@ navCreate.addEventListener('click', () => {
   bookmark.hidden = true
   create.hidden = false
   settings.hidden = true
-
-  /* navHome.classList.remove('active')
-  navBookmark.classList.remove('active')
-  navCreate.classList.add('active')
-  navSettings.classList.remove('active') */
 })
 
 navSettings.addEventListener('click', () => {
@@ -133,9 +134,4 @@ navSettings.addEventListener('click', () => {
   bookmark.hidden = true
   create.hidden = true
   settings.hidden = false
-
-  /* navHome.classList.remove('active')
-  navBookmark.classList.remove('active')
-  navCreate.classList.remove('active')
-  navSettings.classList.add('active') */
 })
