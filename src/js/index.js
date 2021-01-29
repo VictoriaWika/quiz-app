@@ -10,19 +10,25 @@ const navBookmark = document.querySelector('[data-js=iconBookmark]')
 const navCreate = document.querySelector('[data-js=iconCreate]')
 const navSettings = document.querySelector('[data-js=iconSettings]')
 
-const bm1 = document.querySelector('[data-js=bm1]')
-const bm2 = document.querySelector('[data-js=bm2]')
-const bm3 = document.querySelector('[data-js=bm3]')
-const bm4 = document.querySelector('[data-js=bm4]')
-
 const img1 = 'http://localhost:8080/icons/bookmark.svg'
 const img2 = 'http://localhost:8080/icons/marked.svg'
 
 const bookmarks = document.querySelectorAll('[data-js="bookmark"]')
 
+const cards = document.querySelectorAll('[data-js="card"]')
+
 bookmarks.forEach(mark => {
   mark.addEventListener('click', () => {
     mark.src == img1 ? (mark.src = img2) : (mark.src = img1)
+  })
+})
+
+cards.forEach(card => {
+  const button = card.querySelector('[data-js="button"]')
+  const answer = card.querySelector('[data-js="answer"]')
+
+  button.addEventListener('click', () => {
+    answer.classList.toggle('hidden')
   })
 })
 
