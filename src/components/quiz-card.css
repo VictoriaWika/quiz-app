@@ -19,6 +19,7 @@
 
 .quiz-card__list {
   padding: 0;
+  padding-bottom: 5px;
   margin-bottom: 0;
 }
 
@@ -30,6 +31,7 @@
     var(--color-lightpurple)
   );
   padding: 5px 10px;
+  margin-bottom: 5px;
   border-radius: 30px;
   border: none;
   color: var(--color-white);
