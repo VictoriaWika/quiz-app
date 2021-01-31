@@ -17,6 +17,12 @@ const bookmarks = document.querySelectorAll('[data-js="bookmark"]')
 
 const cards = document.querySelectorAll('[data-js="card"]')
 
+const formSubmit = document.querySelector('[data-js="formSubmit"]')
+
+const forms = document.querySelectorAll('[data-js="form"]')
+const textareas = document.querySelectorAll('[data-js="textarea"]')
+const counters = document.querySelectorAll('[data-js="counter"]')
+
 bookmarks.forEach(mark => {
   mark.addEventListener('click', () => {
     mark.src == img1 ? (mark.src = img2) : (mark.src = img1)
@@ -29,6 +35,17 @@ cards.forEach(card => {
 
   button.addEventListener('click', () => {
     answer.classList.toggle('hidden')
+  })
+})
+
+forms.forEach(form => {
+  const textarea = form.querySelector('[data-js="textarea"]')
+  const counter = form.querySelector('[data-js="counter"]')
+
+  textarea.addEventListener('input', () => {
+    const textLength = textarea.value.length
+    counter.innerHTML =
+      textarea.maxLength - textLength + '/' + `${textarea.maxLength}`
   })
 })
 
@@ -112,4 +129,11 @@ navSettings.addEventListener('click', () => {
   bookmarkSite.hidden = true
   create.hidden = true
   settings.hidden = false
+})
+
+formSubmit.addEventListener('submit', event => {
+  const inputQuestion = document.querySelector('[data-js="textarea"]')
+  event.preventDefault()
+  formSubmit.reset()
+  inputQuestion.focus()
 })

@@ -64,3 +64,13 @@ footer {
   background-color: rgb(241, 241, 241);
   overflow: hidden;
 }
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.smaller-text {
+  font-size: 14px;
+  align-self: flex-end;
+}

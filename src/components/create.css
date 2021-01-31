@@ -21,6 +21,7 @@
   border: 2px solid var(--color-lightblue);
   font-family: 'Nunito', sans-serif;
   font-size: 16px;
+  padding: 5px;
   color: var(--text-color);
 }
 
