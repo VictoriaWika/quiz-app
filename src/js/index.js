@@ -4,6 +4,7 @@ const header = document.querySelector('header')
 const footer = document.querySelector('footer')
 
 const heading = document.querySelector('h1')
+const htwos = document.querySelectorAll('[data-js="htwo"]')
 const home = document.querySelector('[data-js="home"]')
 const bookmarkSite = document.querySelector('[data-js="bookmarkSite"]')
 const create = document.querySelector('[data-js="create"]')
@@ -17,12 +18,14 @@ const img1 = 'http://localhost:8080/icons/bookmark.svg'
 const img2 = 'http://localhost:8080/icons/marked.svg'
 
 const bookmarks = document.querySelectorAll('[data-js="bookmark"]')
-
 const cards = document.querySelectorAll('[data-js="card"]')
+const tags = document.querySelectorAll('[data-js="tag"]')
 
 const buttonDark = document.querySelector('[data-js="button-dark"]')
-const formSubmit = document.querySelector('[data-js="formSubmit"]')
+const buttonSubmit = document.querySelector('[data-js="button-submit"]')
 
+const formSubmit = document.querySelector('[data-js="formSubmit"]')
+const formLabels = document.querySelectorAll('[data-js="formLabel"]')
 const formInputs = document.querySelectorAll('[data-js="formInput"]')
 const textareas = document.querySelectorAll('[data-js="textarea"]')
 const counters = document.querySelectorAll('[data-js="counter"]')
@@ -42,20 +45,6 @@ cards.forEach(card => {
   })
 })
 
-buttonDark.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode')
-  header.classList.toggle('dark-mode')
-  footer.classList.toggle('dark-mode')
-  /*card.classList.toggle('dark-mode')*/
-})
-
-/* cards.forEach(card => {
-  const buttonDark = document.querySelector('[data-js="button-dark"]')
-
-  buttonDark.addEventListener('click', () => {
-    card.classList.toggle('quiz-card-dark-mode')
-}) */
-
 formInputs.forEach(formInput => {
   const textarea = formInput.querySelector('[data-js="textarea"]')
   const counter = formInput.querySelector('[data-js="counter"]')
@@ -66,6 +55,59 @@ formInputs.forEach(formInput => {
       textarea.maxLength - textLength + '/' + textarea.maxLength
   })
 })
+
+formSubmit.addEventListener('submit', event => {
+  event.preventDefault()
+  formSubmit.reset()
+
+  const inputQuestion = document.querySelector('[data-js="textarea"]')
+  inputQuestion.focus()
+})
+
+// =============== Dark Mode ===============
+
+buttonDark.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode')
+  header.classList.toggle('dark-mode')
+  footer.classList.toggle('dark-mode')
+  heading.classList.toggle('dark-mode')
+  buttonSubmit.classList.toggle('create__form-button-dark-mode')
+})
+
+cards.forEach(card => {
+  const button = card.querySelector('[data-js="button"]')
+
+  buttonDark.addEventListener('click', () => {
+    card.classList.toggle('quiz-card__dark-mode')
+    button.classList.toggle('quiz-card__button-dark-mode')
+  })
+})
+
+textareas.forEach(area => {
+  buttonDark.addEventListener('click', () => {
+    area.classList.toggle('create__form-text-dark-mode')
+  })
+})
+
+tags.forEach(tag => {
+  buttonDark.addEventListener('click', () => {
+    tag.classList.toggle('quiz-card__tag-dark-mode')
+  })
+})
+
+htwos.forEach(h2 => {
+  buttonDark.addEventListener('click', () => {
+    h2.classList.toggle('dark-mode')
+  })
+})
+
+formLabels.forEach(label => {
+  buttonDark.addEventListener('click', () => {
+    label.classList.toggle('create__form-input-dark-mode')
+  })
+})
+
+// ============= Dark Mode END =============
 
 navHome.addEventListener('click', () => {
   heading.textContent = 'Quiz App'
@@ -147,12 +189,4 @@ navSettings.addEventListener('click', () => {
   bookmarkSite.hidden = true
   create.hidden = true
   settings.hidden = false
-})
-
-formSubmit.addEventListener('submit', event => {
-  const inputQuestion = document.querySelector('[data-js="textarea"]')
-
-  event.preventDefault()
-  formSubmit.reset()
-  inputQuestion.focus()
 })

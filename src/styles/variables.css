@@ -6,4 +6,11 @@
   --color-white: #fff;
   --color-lightgrey: #f1f1f1;
   --text-color: #4d4d4d;
+  --color-lightblue__dark-mode: #083f88;
+  --color-blue__dark-mode: #0b2491;
+  --color-purple__dark-mode: #200b93;
+  --color-lightpurple__dark-mode: #370a8a;
+  --color-white__dark-mode: #fff;
+  --color-lightgrey__dark-mode: #18181a;
+  --text-color__dark-mode: #f1f1f1;
 }

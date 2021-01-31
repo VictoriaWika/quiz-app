@@ -36,10 +36,21 @@ h1 {
   -webkit-text-fill-color: transparent;
 }
 
+h1.dark-mode {
+  background: -webkit-linear-gradient(225deg, #083f88, #370a8a);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 h2 {
   font-size: 20px;
   font-weight: 500;
   color: var(--text-color);
+}
+
+h2.dark-mode {
+  color: var(--text-color__dark-mode);
 }
 
 main {
@@ -73,7 +84,7 @@ footer {
 
 footer.dark-mode,
 header.dark-mode {
-  background-color: #18181a;
+  background-color: #141414;
 }
 
 .flex-container {
