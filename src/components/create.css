@@ -16,6 +16,10 @@
   color: var(--text-color);
 }
 
+.create__form-input-dark-mode {
+  color: var(--text-color__dark-mode);
+}
+
 .create__form-text {
   margin-bottom: 15px;
   border: 2px solid var(--color-lightblue);
@@ -25,8 +29,14 @@
   color: var(--text-color);
 }
 
+.create__form-text-dark-mode {
+  background: transparent;
+  color: inherit;
+  border: 2px solid var(--color-lightblue__dark-mode);
+}
+
 .create__form-button {
-  font-size: 1em;
+  font-size: 1.2em;
   background: linear-gradient(
     225deg,
     var(--color-lightblue),
@@ -40,4 +50,12 @@
   margin-top: 20px;
   list-style: none;
   display: inline-block;
+}
+
+.create__form-button-dark-mode {
+  background: linear-gradient(
+    225deg,
+    var(--color-lightblue__dark-mode),
+    var(--color-lightpurple__dark-mode)
+  );
 }

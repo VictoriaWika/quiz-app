@@ -7,6 +7,10 @@
   position: relative;
 }
 
+.quiz-card__dark-mode {
+  background-color: #141414;
+}
+
 .quiz-card__bookmark {
   position: absolute;
   top: -16px;
@@ -40,12 +44,23 @@
   display: inline-block;
 }
 
+.quiz-card__tag-dark-mode {
+  border: 1px solid var(--color-lightpurple__dark-mode);
+  background: none;
+}
+
 .quiz-card__button {
   border: none;
   font-size: 1em;
   color: var(--color-purple);
   border-bottom: 1px solid var(--color-purple);
   margin-top: 10px;
+  background: transparent;
+}
+
+.quiz-card__button-dark-mode {
+  color: var(--color-lightpurple);
+  border-bottom: 1px solid var(--color-lightpurple);
 }
 
 .hidden {

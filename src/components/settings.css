@@ -1,0 +1,12 @@
+.settings__button {
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+.settings__button-dark-mode {
+  border: none;
+  border-radius: 0;
+  background: black;
+  color: white;
+}

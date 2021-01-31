@@ -1,24 +1,31 @@
 console.clear()
 
-const header = document.querySelector('h1')
-const home = document.querySelector('[data-js=home]')
-const bookmarkSite = document.querySelector('[data-js=bookmarkSite]')
-const create = document.querySelector('[data-js=create]')
-const settings = document.querySelector('[data-js=settings]')
-const navHome = document.querySelector('[data-js=iconHome]')
-const navBookmark = document.querySelector('[data-js=iconBookmark]')
-const navCreate = document.querySelector('[data-js=iconCreate]')
-const navSettings = document.querySelector('[data-js=iconSettings]')
+const header = document.querySelector('header')
+const footer = document.querySelector('footer')
+
+const heading = document.querySelector('h1')
+const htwos = document.querySelectorAll('[data-js="htwo"]')
+const home = document.querySelector('[data-js="home"]')
+const bookmarkSite = document.querySelector('[data-js="bookmarkSite"]')
+const create = document.querySelector('[data-js="create"]')
+const settings = document.querySelector('[data-js="settings"]')
+const navHome = document.querySelector('[data-js="iconHome"]')
+const navBookmark = document.querySelector('[data-js="iconBookmark"]')
+const navCreate = document.querySelector('[data-js="iconCreate"]')
+const navSettings = document.querySelector('[data-js="iconSettings"]')
 
 const img1 = 'http://localhost:8080/icons/bookmark.svg'
 const img2 = 'http://localhost:8080/icons/marked.svg'
 
 const bookmarks = document.querySelectorAll('[data-js="bookmark"]')
-
 const cards = document.querySelectorAll('[data-js="card"]')
+const tags = document.querySelectorAll('[data-js="tag"]')
+
+const buttonDark = document.querySelector('[data-js="button-dark"]')
+const buttonSubmit = document.querySelector('[data-js="button-submit"]')
 
 const formSubmit = document.querySelector('[data-js="formSubmit"]')
-
+const formLabels = document.querySelectorAll('[data-js="formLabel"]')
 const formInputs = document.querySelectorAll('[data-js="formInput"]')
 const textareas = document.querySelectorAll('[data-js="textarea"]')
 const counters = document.querySelectorAll('[data-js="counter"]')
@@ -49,8 +56,61 @@ formInputs.forEach(formInput => {
   })
 })
 
+formSubmit.addEventListener('submit', event => {
+  event.preventDefault()
+  formSubmit.reset()
+
+  const inputQuestion = document.querySelector('[data-js="textarea"]')
+  inputQuestion.focus()
+})
+
+// =============== Dark Mode ===============
+
+buttonDark.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode')
+  header.classList.toggle('dark-mode')
+  footer.classList.toggle('dark-mode')
+  heading.classList.toggle('dark-mode')
+  buttonSubmit.classList.toggle('create__form-button-dark-mode')
+})
+
+cards.forEach(card => {
+  const button = card.querySelector('[data-js="button"]')
+
+  buttonDark.addEventListener('click', () => {
+    card.classList.toggle('quiz-card__dark-mode')
+    button.classList.toggle('quiz-card__button-dark-mode')
+  })
+})
+
+textareas.forEach(area => {
+  buttonDark.addEventListener('click', () => {
+    area.classList.toggle('create__form-text-dark-mode')
+  })
+})
+
+tags.forEach(tag => {
+  buttonDark.addEventListener('click', () => {
+    tag.classList.toggle('quiz-card__tag-dark-mode')
+  })
+})
+
+htwos.forEach(h2 => {
+  buttonDark.addEventListener('click', () => {
+    h2.classList.toggle('dark-mode')
+  })
+})
+
+formLabels.forEach(label => {
+  buttonDark.addEventListener('click', () => {
+    label.classList.toggle('create__form-input-dark-mode')
+  })
+})
+
+// ============= Dark Mode END =============
+
 navHome.addEventListener('click', () => {
-  header.textContent = 'Quiz App'
+  heading.textContent = 'Quiz App'
   document.querySelector('[data-js=iconHome]').src =
     'data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PGc+PHBhdGggZD0ibTE1MCAyNTZjMC04LjI4NC02LjcxNi0xNS0xNS0xNXMtMTUgNi43MTYtMTUgMTV2MzQuODU5aC0zMHYtMzQuODU5YzAtOC4yODQtNi43MTYtMTUtMTUtMTVzLTE1IDYuNzE2LTE1IDE1djM0Ljg1OWgtMzB2LTM0Ljg1OWMwLTguMjg0LTYuNzE2LTE1LTE1LTE1cy0xNSA2LjcxNi0xNSAxNXYyNTZoMTUwLjE2OHptLTYwIDExMC4yNDZjMCA4LjI4NC02LjcxNiAxNS0xNSAxNXMtMTUtNi43MTYtMTUtMTV2LTEzLjg2NGMwLTguMjg0IDYuNzE2LTE1IDE1LTE1czE1IDYuNzE2IDE1IDE1eiIvPjxwYXRoIGQ9Im00OTcgMjQxYy04LjI4NCAwLTE1IDYuNzE2LTE1IDE1djM0Ljg1OWgtMzB2LTM0Ljg1OWMwLTguMjg0LTYuNzE2LTE1LTE1LTE1cy0xNSA2LjcxNi0xNSAxNXYzNC44NTloLTMwdi0zNC44NTljMC04LjI4NC02LjcxNi0xNS0xNS0xNXMtMTUgNi43MTYtMTUgMTVsLS4xMzMgMjU2aDE1MC4xMzN2LTI1NmMwLTguMjg0LTYuNzE2LTE1LTE1LTE1em0tNDUgMTI1LjI0NmMwIDguMjg0LTYuNzE2IDE1LTE1IDE1cy0xNS02LjcxNi0xNS0xNXYtMTMuODY0YzAtOC4yODQgNi43MTYtMTUgMTUtMTVzMTUgNi43MTYgMTUgMTV6Ii8+PC9nPjxnPjxnPjxwYXRoIGQ9Im0zMTkuNjAyIDE3OC4yMzQtNDguNjAyLTg0LjE5di02NC4wNDRoMjAuMzgyYy0xLjM1MSAyLjI1Mi0yLjE0MiA0Ljg3OC0yLjE0MiA3LjY5NSAwIDguMjg0IDYuNzE2IDE1IDE1IDE1aDQ4LjEwNGM4LjI4NCAwIDE1LTYuNzE2IDE1LTE1cy02LjcxNi0xNS0xNS0xNWgtMjMuNjFjMS4zNTEtMi4yNTIgMi4xNDItNC44NzggMi4xNDItNy42OTUgMC04LjI4NC02LjcxNi0xNS0xNS0xNWgtNTkuODc2Yy04LjI4NCAwLTE1IDYuNzE2LTE1IDE1djc5LjA0NGwtNDguNjAyIDg0LjE5MWgxMjcuMjA0eiIvPjxwYXRoIGQ9Im0zMTkuNjY4IDIwOC4yMzRoLTEyNy4zMzZ2MTA5LjUyNGgxMjcuMzM2em0tNDguNjY4IDYzLjkyYzAgOC4yODQtNi43MTYgMTUtMTUgMTVzLTE1LTYuNzE2LTE1LTE1di0xMy44NjRjMC04LjI4NCA2LjcxNi0xNSAxNS0xNXMxNSA2LjcxNiAxNSAxNXoiLz48L2c+PGc+PHBhdGggZD0ibTI1NiA0NTEuOTYyYy04LjI4MSAwLTE1LjAxOSA2LjczNy0xNS4wMTkgMTUuMDE5djQ1LjAxOWgzMC4wMzd2LTQ1LjAxOWMuMDAxLTguMjgxLTYuNzM3LTE1LjAxOS0xNS4wMTgtMTUuMDE5eiIvPjxwYXRoIGQ9Im0xODAuMTY4IDM0Ny43NTl2MTY0LjI0MWgzMC44MTR2LTQ1LjAxOWMwLTI0LjgyMyAyMC4xOTUtNDUuMDE5IDQ1LjAxOS00NS4wMTkgMjQuODIzIDAgNDUuMDE5IDIwLjE5NSA0NS4wMTkgNDUuMDE5djQ1LjAxOWgzMC44NDl2LTE2NC4yNDF6Ii8+PC9nPjwvZz48L2c+PC9zdmc+'
 
@@ -70,7 +130,7 @@ navHome.addEventListener('click', () => {
 })
 
 navBookmark.addEventListener('click', () => {
-  header.textContent = 'Bookmarks'
+  heading.textContent = 'Bookmarks'
   document.querySelector('[data-js=iconHome]').src =
     'data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PHBhdGggZD0ibTI1NiAyMzMuMjljLTguMjg0IDAtMTUgNi43MTYtMTUgMTV2MTMuODY0YzAgOC4yODQgNi43MTYgMTUgMTUgMTVzMTUtNi43MTYgMTUtMTV2LTEzLjg2NGMwLTguMjg0LTYuNzE2LTE1LTE1LTE1eiIvPjxwYXRoIGQ9Im02MCAzNTIuMzgydjEzLjg2NGMwIDguMjg0IDYuNzE2IDE1IDE1IDE1czE1LTYuNzE2IDE1LTE1di0xMy44NjRjMC04LjI4NC02LjcxNi0xNS0xNS0xNXMtMTUgNi43MTYtMTUgMTV6Ii8+PHBhdGggZD0ibTQyMiAzNTIuMzgydjEzLjg2NGMwIDguMjg0IDYuNzE2IDE1IDE1IDE1czE1LTYuNzE2IDE1LTE1di0xMy44NjRjMC04LjI4NC02LjcxNi0xNS0xNS0xNXMtMTUgNi43MTYtMTUgMTV6Ii8+PHBhdGggZD0ibTQ5NyAyNDFjLTguMjg0IDAtMTUgNi43MTYtMTUgMTV2MTcuODE2aC0zMHYtMTcuODE2YzAtOC4yODQtNi43MTYtMTUtMTUtMTVzLTE1IDYuNzE2LTE1IDE1djE3LjgxNmgtMzB2LTE3LjgxNmMwLTguMjg0LTYuNzE2LTE1LTE1LTE1cy0xNSA2LjcxNi0xNSAxNXYzMi44MTYgMzguNTY1aC0zMS4xMjV2LTE0Mi42NTRjMC0yLjYxNS0uNzAzLTUuMjM2LTIuMDA5LTcuNTAybC01Ny44NjYtMTAwLjIzOHYtNDYuOTg3aDIwLjM4MmMtMS4zNTEgMi4yNTItMi4xNDIgNC44NzgtMi4xNDIgNy42OTUgMCA4LjI4NCA2LjcxNiAxNSAxNSAxNWg0OC4xMDRjOC4yODQgMCAxNS02LjcxNiAxNS0xNXMtNi43MTYtMTUtMTUtMTVoLTIzLjYxYzEuMzUxLTIuMjUyIDIuMTQyLTQuODc4IDIuMTQyLTcuNjk1IDAtOC4yODQtNi43MTYtMTUtMTUtMTVoLTU5Ljg3NmMtOC4yODQgMC0xNSA2LjcxNi0xNSAxNXY2MS45ODdsLTU3LjA2NyA5OC44NTVjLTEuODM1IDIuNDg5LTIuOTMzIDUuNTU0LTIuOTMzIDguODgzdjE0Mi42NTdoLTMxdi0zOC41NjUtMzIuODE3YzAtOC4yODQtNi43MTYtMTUtMTUtMTVzLTE1IDYuNzE2LTE1IDE1djE3LjgxNmgtMzB2LTE3LjgxNmMwLTguMjg0LTYuNzE2LTE1LTE1LTE1cy0xNSA2LjcxNi0xNSAxNXYxNy44MTZoLTMwdi0xNy44MTZjMC04LjI4NC02LjcxNi0xNS0xNS0xNXMtMTUgNi43MTYtMTUgMTV2MjQxYzAgOC4yODQgNi43MTYgMTUgMTUgMTVoNDgyYzguMjg0IDAgMTUtNi43MTYgMTUtMTV2LTI0MWMwLTguMjg0LTYuNzE2LTE1LTE1LTE1em0tMjQxLTEyOS45OTIgMzMuODk1IDU4LjcxNmgtNjcuNzkxem0tNDUgODguNzE3aDg5Ljg3NXYxMjcuNjU3aC04OS44NzV6bTE1MSAxNTcuNjU3djEyNC42MThoLTYwLjk4MXYtMTUuMDE5YzAtMjQuODIzLTIwLjE5NS00NS4wMTktNDUuMDE5LTQ1LjAxOS0yNC44MjMgMC00NS4wMTkgMjAuMTk1LTQ1LjAxOSA0NS4wMTl2MTUuMDE5aC02MC45ODF2LTEyNC42MTh6bS05MC45ODEgMTI0LjYxOGgtMzAuMDM3di0xNS4wMTljMC04LjI4MSA2LjczNy0xNS4wMTkgMTUuMDE5LTE1LjAxOSA4LjI4MSAwIDE1LjAxOSA2LjczNyAxNS4wMTkgMTUuMDE5djE1LjAxOXptLTE1MS4wMTkgMGgtOTB2LTE3OC4xODRoOTB6bTM2MiAwaC05MHYtMTc4LjE4NGg5MHoiLz48L2c+PC9zdmc+'
 
@@ -90,7 +150,7 @@ navBookmark.addEventListener('click', () => {
 })
 
 navCreate.addEventListener('click', () => {
-  header.textContent = 'Create'
+  heading.textContent = 'Create'
 
   document.querySelector('[data-js=iconHome]').src =
     'data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PHBhdGggZD0ibTI1NiAyMzMuMjljLTguMjg0IDAtMTUgNi43MTYtMTUgMTV2MTMuODY0YzAgOC4yODQgNi43MTYgMTUgMTUgMTVzMTUtNi43MTYgMTUtMTV2LTEzLjg2NGMwLTguMjg0LTYuNzE2LTE1LTE1LTE1eiIvPjxwYXRoIGQ9Im02MCAzNTIuMzgydjEzLjg2NGMwIDguMjg0IDYuNzE2IDE1IDE1IDE1czE1LTYuNzE2IDE1LTE1di0xMy44NjRjMC04LjI4NC02LjcxNi0xNS0xNS0xNXMtMTUgNi43MTYtMTUgMTV6Ii8+PHBhdGggZD0ibTQyMiAzNTIuMzgydjEzLjg2NGMwIDguMjg0IDYuNzE2IDE1IDE1IDE1czE1LTYuNzE2IDE1LTE1di0xMy44NjRjMC04LjI4NC02LjcxNi0xNS0xNS0xNXMtMTUgNi43MTYtMTUgMTV6Ii8+PHBhdGggZD0ibTQ5NyAyNDFjLTguMjg0IDAtMTUgNi43MTYtMTUgMTV2MTcuODE2aC0zMHYtMTcuODE2YzAtOC4yODQtNi43MTYtMTUtMTUtMTVzLTE1IDYuNzE2LTE1IDE1djE3LjgxNmgtMzB2LTE3LjgxNmMwLTguMjg0LTYuNzE2LTE1LTE1LTE1cy0xNSA2LjcxNi0xNSAxNXYzMi44MTYgMzguNTY1aC0zMS4xMjV2LTE0Mi42NTRjMC0yLjYxNS0uNzAzLTUuMjM2LTIuMDA5LTcuNTAybC01Ny44NjYtMTAwLjIzOHYtNDYuOTg3aDIwLjM4MmMtMS4zNTEgMi4yNTItMi4xNDIgNC44NzgtMi4xNDIgNy42OTUgMCA4LjI4NCA2LjcxNiAxNSAxNSAxNWg0OC4xMDRjOC4yODQgMCAxNS02LjcxNiAxNS0xNXMtNi43MTYtMTUtMTUtMTVoLTIzLjYxYzEuMzUxLTIuMjUyIDIuMTQyLTQuODc4IDIuMTQyLTcuNjk1IDAtOC4yODQtNi43MTYtMTUtMTUtMTVoLTU5Ljg3NmMtOC4yODQgMC0xNSA2LjcxNi0xNSAxNXY2MS45ODdsLTU3LjA2NyA5OC44NTVjLTEuODM1IDIuNDg5LTIuOTMzIDUuNTU0LTIuOTMzIDguODgzdjE0Mi42NTdoLTMxdi0zOC41NjUtMzIuODE3YzAtOC4yODQtNi43MTYtMTUtMTUtMTVzLTE1IDYuNzE2LTE1IDE1djE3LjgxNmgtMzB2LTE3LjgxNmMwLTguMjg0LTYuNzE2LTE1LTE1LTE1cy0xNSA2LjcxNi0xNSAxNXYxNy44MTZoLTMwdi0xNy44MTZjMC04LjI4NC02LjcxNi0xNS0xNS0xNXMtMTUgNi43MTYtMTUgMTV2MjQxYzAgOC4yODQgNi43MTYgMTUgMTUgMTVoNDgyYzguMjg0IDAgMTUtNi43MTYgMTUtMTV2LTI0MWMwLTguMjg0LTYuNzE2LTE1LTE1LTE1em0tMjQxLTEyOS45OTIgMzMuODk1IDU4LjcxNmgtNjcuNzkxem0tNDUgODguNzE3aDg5Ljg3NXYxMjcuNjU3aC04OS44NzV6bTE1MSAxNTcuNjU3djEyNC42MThoLTYwLjk4MXYtMTUuMDE5YzAtMjQuODIzLTIwLjE5NS00NS4wMTktNDUuMDE5LTQ1LjAxOS0yNC44MjMgMC00NS4wMTkgMjAuMTk1LTQ1LjAxOSA0NS4wMTl2MTUuMDE5aC02MC45ODF2LTEyNC42MTh6bS05MC45ODEgMTI0LjYxOGgtMzAuMDM3di0xNS4wMTljMC04LjI4MSA2LjczNy0xNS4wMTkgMTUuMDE5LTE1LjAxOSA4LjI4MSAwIDE1LjAxOSA2LjczNyAxNS4wMTkgMTUuMDE5djE1LjAxOXptLTE1MS4wMTkgMGgtOTB2LTE3OC4xODRoOTB6bTM2MiAwaC05MHYtMTc4LjE4NGg5MHoiLz48L2c+PC9zdmc+'
@@ -111,7 +171,7 @@ navCreate.addEventListener('click', () => {
 })
 
 navSettings.addEventListener('click', () => {
-  header.textContent = 'Settings'
+  heading.textContent = 'Settings'
 
   document.querySelector('[data-js=iconHome]').src =
     'data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGc+PHBhdGggZD0ibTI1NiAyMzMuMjljLTguMjg0IDAtMTUgNi43MTYtMTUgMTV2MTMuODY0YzAgOC4yODQgNi43MTYgMTUgMTUgMTVzMTUtNi43MTYgMTUtMTV2LTEzLjg2NGMwLTguMjg0LTYuNzE2LTE1LTE1LTE1eiIvPjxwYXRoIGQ9Im02MCAzNTIuMzgydjEzLjg2NGMwIDguMjg0IDYuNzE2IDE1IDE1IDE1czE1LTYuNzE2IDE1LTE1di0xMy44NjRjMC04LjI4NC02LjcxNi0xNS0xNS0xNXMtMTUgNi43MTYtMTUgMTV6Ii8+PHBhdGggZD0ibTQyMiAzNTIuMzgydjEzLjg2NGMwIDguMjg0IDYuNzE2IDE1IDE1IDE1czE1LTYuNzE2IDE1LTE1di0xMy44NjRjMC04LjI4NC02LjcxNi0xNS0xNS0xNXMtMTUgNi43MTYtMTUgMTV6Ii8+PHBhdGggZD0ibTQ5NyAyNDFjLTguMjg0IDAtMTUgNi43MTYtMTUgMTV2MTcuODE2aC0zMHYtMTcuODE2YzAtOC4yODQtNi43MTYtMTUtMTUtMTVzLTE1IDYuNzE2LTE1IDE1djE3LjgxNmgtMzB2LTE3LjgxNmMwLTguMjg0LTYuNzE2LTE1LTE1LTE1cy0xNSA2LjcxNi0xNSAxNXYzMi44MTYgMzguNTY1aC0zMS4xMjV2LTE0Mi42NTRjMC0yLjYxNS0uNzAzLTUuMjM2LTIuMDA5LTcuNTAybC01Ny44NjYtMTAwLjIzOHYtNDYuOTg3aDIwLjM4MmMtMS4zNTEgMi4yNTItMi4xNDIgNC44NzgtMi4xNDIgNy42OTUgMCA4LjI4NCA2LjcxNiAxNSAxNSAxNWg0OC4xMDRjOC4yODQgMCAxNS02LjcxNiAxNS0xNXMtNi43MTYtMTUtMTUtMTVoLTIzLjYxYzEuMzUxLTIuMjUyIDIuMTQyLTQuODc4IDIuMTQyLTcuNjk1IDAtOC4yODQtNi43MTYtMTUtMTUtMTVoLTU5Ljg3NmMtOC4yODQgMC0xNSA2LjcxNi0xNSAxNXY2MS45ODdsLTU3LjA2NyA5OC44NTVjLTEuODM1IDIuNDg5LTIuOTMzIDUuNTU0LTIuOTMzIDguODgzdjE0Mi42NTdoLTMxdi0zOC41NjUtMzIuODE3YzAtOC4yODQtNi43MTYtMTUtMTUtMTVzLTE1IDYuNzE2LTE1IDE1djE3LjgxNmgtMzB2LTE3LjgxNmMwLTguMjg0LTYuNzE2LTE1LTE1LTE1cy0xNSA2LjcxNi0xNSAxNXYxNy44MTZoLTMwdi0xNy44MTZjMC04LjI4NC02LjcxNi0xNS0xNS0xNXMtMTUgNi43MTYtMTUgMTV2MjQxYzAgOC4yODQgNi43MTYgMTUgMTUgMTVoNDgyYzguMjg0IDAgMTUtNi43MTYgMTUtMTV2LTI0MWMwLTguMjg0LTYuNzE2LTE1LTE1LTE1em0tMjQxLTEyOS45OTIgMzMuODk1IDU4LjcxNmgtNjcuNzkxem0tNDUgODguNzE3aDg5Ljg3NXYxMjcuNjU3aC04OS44NzV6bTE1MSAxNTcuNjU3djEyNC42MThoLTYwLjk4MXYtMTUuMDE5YzAtMjQuODIzLTIwLjE5NS00NS4wMTktNDUuMDE5LTQ1LjAxOS0yNC44MjMgMC00NS4wMTkgMjAuMTk1LTQ1LjAxOSA0NS4wMTl2MTUuMDE5aC02MC45ODF2LTEyNC42MTh6bS05MC45ODEgMTI0LjYxOGgtMzAuMDM3di0xNS4wMTljMC04LjI4MSA2LjczNy0xNS4wMTkgMTUuMDE5LTE1LjAxOSA4LjI4MSAwIDE1LjAxOSA2LjczNyAxNS4wMTkgMTUuMDE5djE1LjAxOXptLTE1MS4wMTkgMGgtOTB2LTE3OC4xODRoOTB6bTM2MiAwaC05MHYtMTc4LjE4NGg5MHoiLz48L2c+PC9zdmc+'
@@ -129,12 +189,4 @@ navSettings.addEventListener('click', () => {
   bookmarkSite.hidden = true
   create.hidden = true
   settings.hidden = false
-})
-
-formSubmit.addEventListener('submit', event => {
-  const inputQuestion = document.querySelector('[data-js="textarea"]')
-
-  event.preventDefault()
-  formSubmit.reset()
-  inputQuestion.focus()
 })
