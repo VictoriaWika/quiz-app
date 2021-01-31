@@ -21,6 +21,11 @@ const bookmarks = document.querySelectorAll('[data-js="bookmark"]')
 const cards = document.querySelectorAll('[data-js="card"]')
 
 const buttonDark = document.querySelector('[data-js="button-dark"]')
+const formSubmit = document.querySelector('[data-js="formSubmit"]')
+
+const formInputs = document.querySelectorAll('[data-js="formInput"]')
+const textareas = document.querySelectorAll('[data-js="textarea"]')
+const counters = document.querySelectorAll('[data-js="counter"]')
 
 bookmarks.forEach(mark => {
   mark.addEventListener('click', () => {
@@ -50,6 +55,17 @@ buttonDark.addEventListener('click', () => {
   buttonDark.addEventListener('click', () => {
     card.classList.toggle('quiz-card-dark-mode')
 }) */
+
+formInputs.forEach(formInput => {
+  const textarea = formInput.querySelector('[data-js="textarea"]')
+  const counter = formInput.querySelector('[data-js="counter"]')
+
+  textarea.addEventListener('input', () => {
+    const textLength = textarea.value.length
+    counter.innerHTML =
+      textarea.maxLength - textLength + '/' + textarea.maxLength
+  })
+})
 
 navHome.addEventListener('click', () => {
   heading.textContent = 'Quiz App'
@@ -131,4 +147,12 @@ navSettings.addEventListener('click', () => {
   bookmarkSite.hidden = true
   create.hidden = true
   settings.hidden = false
+})
+
+formSubmit.addEventListener('submit', event => {
+  const inputQuestion = document.querySelector('[data-js="textarea"]')
+
+  event.preventDefault()
+  formSubmit.reset()
+  inputQuestion.focus()
 })

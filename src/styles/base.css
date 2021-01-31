@@ -75,3 +75,13 @@ footer.dark-mode,
 header.dark-mode {
   background-color: #18181a;
 }
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.smaller-text {
+  font-size: 14px;
+  align-self: flex-end;
+}
