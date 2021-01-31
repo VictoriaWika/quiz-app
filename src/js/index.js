@@ -19,7 +19,7 @@ const cards = document.querySelectorAll('[data-js="card"]')
 
 const formSubmit = document.querySelector('[data-js="formSubmit"]')
 
-const forms = document.querySelectorAll('[data-js="form"]')
+const formInputs = document.querySelectorAll('[data-js="formInput"]')
 const textareas = document.querySelectorAll('[data-js="textarea"]')
 const counters = document.querySelectorAll('[data-js="counter"]')
 
@@ -38,14 +38,14 @@ cards.forEach(card => {
   })
 })
 
-forms.forEach(form => {
-  const textarea = form.querySelector('[data-js="textarea"]')
-  const counter = form.querySelector('[data-js="counter"]')
+formInputs.forEach(formInput => {
+  const textarea = formInput.querySelector('[data-js="textarea"]')
+  const counter = formInput.querySelector('[data-js="counter"]')
 
   textarea.addEventListener('input', () => {
     const textLength = textarea.value.length
     counter.innerHTML =
-      textarea.maxLength - textLength + '/' + `${textarea.maxLength}`
+      textarea.maxLength - textLength + '/' + textarea.maxLength
   })
 })
 
@@ -133,6 +133,7 @@ navSettings.addEventListener('click', () => {
 
 formSubmit.addEventListener('submit', event => {
   const inputQuestion = document.querySelector('[data-js="textarea"]')
+
   event.preventDefault()
   formSubmit.reset()
   inputQuestion.focus()
