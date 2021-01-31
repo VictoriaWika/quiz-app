@@ -24,6 +24,10 @@
   color: var(--text-color);
 }
 
+.create__form-text-dark-mode {
+  background: #18181a;
+}
+
 .create__form-button {
   font-size: 1em;
   background: linear-gradient(

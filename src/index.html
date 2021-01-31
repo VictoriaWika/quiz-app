@@ -14,7 +14,7 @@
 
     <main class="app-grid__main">
       <section data-js="home">
-        <section class="quiz-card">
+        <section class="quiz-card" data-js="card">
           <img
             role="button"
             class="quiz-card__bookmark"
@@ -25,7 +25,7 @@
             height="30"
           />
           <h2>What is always coming but never arrives?</h2>
-          <section data-js="card">
+          <section>
             <button class="quiz-card__button" data-js="button">
               Show Answer
             </button>
@@ -38,7 +38,32 @@
             <li class="quiz-card__tag">Tag 4</li>
           </ul>
         </section>
-        <section class="quiz-card">
+        <section class="quiz-card" data-js="card">
+          <img
+            role="button"
+            class="quiz-card__bookmark"
+            data-js="bookmark"
+            src="/icons/bookmark.svg"
+            alt="Bookmark"
+            width="30"
+            height="30"
+          />
+
+          <h2>Question</h2>
+          <section>
+            <button class="quiz-card__button" data-js="button">
+              Show Answer
+            </button>
+            <p data-js="answer" class="hidden">Tomorrow</p>
+          </section>
+          <ul class="quiz-card__list">
+            <li class="quiz-card__tag">Tag 1</li>
+            <li class="quiz-card__tag">Tag 2</li>
+            <li class="quiz-card__tag">Tag 3</li>
+            <li class="quiz-card__tag">Tag 4</li>
+          </ul>
+        </section>
+        <section class="quiz-card" data-js="quiz-card">
           <img
             role="button"
             class="quiz-card__bookmark"
@@ -63,32 +88,7 @@
             <li class="quiz-card__tag">Tag 4</li>
           </ul>
         </section>
-        <section class="quiz-card">
-          <img
-            role="button"
-            class="quiz-card__bookmark"
-            data-js="bookmark"
-            src="/icons/bookmark.svg"
-            alt="Bookmark"
-            width="30"
-            height="30"
-          />
-
-          <h2>Question</h2>
-          <section data-js="card">
-            <button class="quiz-card__button" data-js="button">
-              Show Answer
-            </button>
-            <p data-js="answer" class="hidden">Tomorrow</p>
-          </section>
-          <ul class="quiz-card__list">
-            <li class="quiz-card__tag">Tag 1</li>
-            <li class="quiz-card__tag">Tag 2</li>
-            <li class="quiz-card__tag">Tag 3</li>
-            <li class="quiz-card__tag">Tag 4</li>
-          </ul>
-        </section>
-        <section class="quiz-card">
+        <section class="quiz-card" data-js="quiz-card">
           <img
             role="button"
             class="quiz-card__bookmark"
@@ -114,7 +114,7 @@
         </section>
       </section>
       <section hidden data-js="bookmarkSite">
-        <section class="quiz-card">
+        <section class="quiz-card" data-js="quiz-card">
           <img
             role="button"
             class="quiz-card__bookmark"
@@ -138,7 +138,7 @@
             <li class="quiz-card__tag">Tag 4</li>
           </ul>
         </section>
-        <section class="quiz-card">
+        <section class="quiz-card" data-js="quiz-card">
           <img
             role="button"
             class="quiz-card__bookmark"
@@ -163,7 +163,7 @@
             <li class="quiz-card__tag">Tag 4</li>
           </ul>
         </section>
-        <section class="quiz-card">
+        <section class="quiz-card" data-js="quiz-card">
           <img
             role="button"
             class="quiz-card__bookmark"
@@ -188,7 +188,7 @@
             <li class="quiz-card__tag">Tag 4</li>
           </ul>
         </section>
-        <section class="quiz-card">
+        <section class="quiz-card" data-js="quiz-card">
           <img
             role="button"
             class="quiz-card__bookmark"
@@ -264,6 +264,7 @@
       </section>
       <section hidden data-js="settings">
         <h2>Site under Construction, please return to Home!</h2>
+        <button data-js="button-dark">Dark Mode!</button>
       </section>
     </main>
 

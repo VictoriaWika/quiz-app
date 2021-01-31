@@ -7,6 +7,10 @@
   position: relative;
 }
 
+.quiz-card-dark-mode {
+  background-color: #18181a;
+}
+
 .quiz-card__bookmark {
   position: absolute;
   top: -16px;
