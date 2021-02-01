@@ -28,7 +28,6 @@ const formSubmit = document.querySelector('[data-js="formSubmit"]')
 const formLabels = document.querySelectorAll('[data-js="formLabel"]')
 const formInputs = document.querySelectorAll('[data-js="formInput"]')
 const textareas = document.querySelectorAll('[data-js="textarea"]')
-const counters = document.querySelectorAll('[data-js="counter"]')
 
 bookmarks.forEach(mark => {
   mark.addEventListener('click', () => {
