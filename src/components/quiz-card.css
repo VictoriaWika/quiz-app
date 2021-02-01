@@ -17,8 +17,17 @@
   right: 30px;
   filter: invert(35%) sepia(62%) saturate(1695%) hue-rotate(212deg)
     brightness(95%) contrast(98%);
+  content: url(../icons/bookmark.svg);
+  width: 30px;
+  height: 30px;
 
   /* var(--color-blue) */
+}
+
+.quiz-card__bookmark--active {
+  content: url(../icons/bookmark-active.svg);
+  width: 30px;
+  height: 30px;
 }
 
 .quiz-card__list {
