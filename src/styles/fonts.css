@@ -5,8 +5,7 @@
   font-weight: 400;
   src: url('../fonts/maven-pro-v21-latin-regular.eot'); /* IE9 Compat Modes */
   src: local('../fonts'),
-    url('../fonts/maven-pro-v21-latin-regular.eot?#iefix')
-      format('embedded-opentype'),
+    url('../fonts/maven-pro-v21-latin-regular.eot') format('embedded-opentype'),
     /* IE6-IE8 */ url('../fonts/maven-pro-v21-latin-regular.woff2')
       format('woff2'),
     /* Super Modern Browsers */ url('../fonts/maven-pro-v21-latin-regular.woff')
