@@ -18,7 +18,7 @@
   /* var(--color-lightpurple) */
 }
 
-.navigation__icon-home--active {
+.navigation__icon-home.active {
   content: url(../icons/home-active.svg);
 }
 
@@ -32,7 +32,7 @@
   /* var(--color-purple) */
 }
 
-.navigation__icon-bookmark--active {
+.navigation__icon-bookmark.active {
   content: url(../icons/bookmark-active.svg);
 }
 
@@ -46,7 +46,7 @@
   /*  var(--color-blue) */
 }
 
-.navigation__icon-create--active {
+.navigation__icon-create.active {
   content: url(../icons/create-active.svg);
 }
 
@@ -60,6 +60,6 @@
   /* var(--color-lightblue) */
 }
 
-.navigation__icon-settings--active {
+.navigation__icon-settings.active {
   content: url(../icons/settings-active.svg);
 }
