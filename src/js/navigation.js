@@ -21,23 +21,15 @@ export default function navigation() {
   })
 
   navIcons.forEach(icon => {
-    /* const navHome = icon.dataset.name
-  const navBookmark = getByDataJs('iconBookmark')
-  const navCreate = getByDataJs('iconCreate')
-  const navSettings = getByDataJs('iconSettings') */
-
     icon.addEventListener('click', () => {
       heading.textContent = 'Quiz App'
     })
-
     icon.addEventListener('click', () => {
       heading.textContent = 'Bookmarks'
     })
-
     icon.addEventListener('click', () => {
       heading.textContent = 'Create'
     })
-
     icon.addEventListener('click', () => {
       heading.textContent = 'Settings'
     })
